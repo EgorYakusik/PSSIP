@@ -1,0 +1,92 @@
+
+h1 {
+	text-align: center;
+	background-color: #F0E68C;
+	margin-left: 520px;
+	margin-right: 520px;
+	border: 2px solid #DEB887;
+	transition: 3s all;
+}
+h1:hover {
+	transform: scale(1.2) rotate(360deg);
+}
+
+/*навигация*/
+nav{
+	color: #000;
+	float: right; /*размещение навигации справа*/
+	margin-right: 150px;
+	margin-top: -60px;
+}
+
+nav ul{
+	list-style: none; /*стиль списка отсутствует */
+}
+
+nav ul li {
+	float: left; /*размешение слева*/
+	transition: .3s; /*изменение за 0.3 секунды*/
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: #000;
+	transition: .5;
+	font-size: 15px;
+	margin-left:16px;
+}
+
+nav ul li:hover a{
+	text-decoration: none;
+	color: #591BC5;
+}
+
+nav ul li:hover{
+	height: 45px;
+	padding-top: 30px;
+	margin-top: -30px;
+	background: #EFEEF5;
+	text-decoration: none;
+}
+
+.info {
+	background-color: #F0E68C;
+	margin-right: 1050px;
+	margin-left: 50px;
+	transition: 1s;
+}
+.info:hover {
+	transform: scale(1.2);
+}
+
+#kolb {
+	margin-left: 500px;
+	margin-top: -455px;
+	width: 35%;
+	
+	transition: 0.5s;
+}
+img:hover {
+	transform: rotate(3600deg);
+}
+
+.info1 {
+	background-color: #F0E68C;
+	margin-left: 1150px;
+	margin-right: 50px;
+	margin-top: -525px;
+	transition: 1s;
+}
+.info1:hover {
+	transform: scale(1.2);
+}
+
+.info2 {
+	background-color: #F0E68C;
+	margin-left: 1150px;
+	margin-right: 50px;
+	transition: 1s;
+}
+.info2:hover {
+	transform: scale(1.2);
+}

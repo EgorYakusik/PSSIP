@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>temkontr</title>
+        <script>
+            function Timer() {
+                var time = new Date;
+                var hours = time.getHours();
+                var seconds = time.getSeconds();
+
+                var time = document.getElementById("time");
+                time.value = hours + "-" + seconds;
+                alert(time.value);
+            }
+        </script>
+    </head>
+    <body>
+        <script src="main.js"></script>
+        <div class="container-wrapper">
+
+            <label>Hours-seconds</label>
+            <input type="text" id="time" />
+            <button onclick="Timer();">Время</button>
+            <br><br>
+
+            <textarea id="text" rows="6" cols="30"></textarea><br>
+            <button onclick="printText()">Нажми, чтобы вывести</button><br><br>
+
+            Первоначальный массив<br>
+            <input id="firstArray" type="text" />
+            <button onclick="show();">Вывести</button><br>
+
+            Дополненный массив<br>
+            <input id="addArray" type="text" />
+            <button onclick="add();">Добавить</button><br><br>
+
+            Рассчитать по формуле<br>
+            <input id="result" type="text"/>
+            <button onclick="calculate();">Рассчитать</button><br><br>
+
+            <label>String 1 (S1)</label>
+            <input type="text" id="S1" /><br> 
+
+            <label>String 2 (S2)</label>
+            <input type="text" id="S2" /><br> 
+
+            <label>Длина строки S2</label>
+            <input type="text" id="length" /><br>
+
+            <label>Символ под индексом 14 в строке S1</label>
+            <input type="text" id="char14" /><br>
+
+            <label>ASCII-код 14-го символа в строке S1</label>
+            <input type="text" id="ascii14" /><br>
+
+            <label>Изменённая строка S1</label>
+            <input type="text" id="replace" /><br>
+
+            <button onclick="output();">Вывести</button>
+        </div>
+
+        <script>
+            let text = document.getElementById("text");
+            let i = 0;
+            
+            function printText() {
+                while (i < 5) {
+                    text.value += "Сегодня лучший день\n";
+                    i++;
+                }
+            }
+
+            var mas = [1, 2, 3, 4, 5];
+            function show() {
+                document.getElementById("firstArray").value = mas;
+            }
+
+            function add() {
+                mas.push(6,7);
+                document.getElementById("addArray").value = mas
+            }
+        </script>
+
+    </body>
+</html>

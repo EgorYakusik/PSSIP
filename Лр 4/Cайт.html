@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Сайт-резюме</title>
+<style>
+   .leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+   }
+   .text
+{
+font-size:14px;
+font-style: Verdana;
+color: #008000;
+}
+
+</style>
+</head>
+<body>
+   <script>
+      function ready() {
+        alert('DOM готов');
+      }
+      
+      if (document.readyState == 'complete') {
+  // ещё загружается, ждём события
+  document.addEventListener('DOMContentLoaded', ready);
+} else {
+  // DOM готов!
+  document.cookie = "user=John";
+  alert(document.cookie)
+  let timerID = setTimeout(ready, 5000);
+  //let timerID1 = setTimeout(window.close(), 2000);
+}
+</script> 
+<script>
+function change(){
+   document.body.style.background = '#ffff00';
+   var textElement = document.getElementById('p1');
+textElement.style.color = 'green';
+document.body.style.font = '14pt Verdana';
+var photo = document.getElementById('image1');
+photo.style.border = '1px solid red';
+
+  }
+
+</script>
+
+
+</script>
+ <div id="div1">
+   <p style="color:#800080" id="p1"><img id="image1" src="C:\Users\user\Desktop\Колледж\картинка.png" width="172" height="214" class="leftimg"> <strong>Якусик Егор</strong></p>
+<p style="color:#ff0000" id="p2"><strong style="color:#ff00ff">Желаемая должность: </strong>переводчик английского языка<br />
+<strong style="color:#ff00ff">Желаемый уровень дохода: </strong>50 тыс. рублей</p>
+<p style="color:#ff0000" id="p3">Дата рождения: 30.09.2003 г.</p>
+</div> 
+<script>
+   var para = document.createElement("p");
+   var node = document.createTextNode("Город проживани.");
+   para.appendChild(node);
+ 
+   var element = document.getElementById("div1");
+   var child = document.getElementById("p3");
+   element.insertBefore(para, child);
+ </script>
+ <button class="button" onclick="change();">Стили</button>
+<p style="color:#ff0000" >Проживание: г. Гродно, ул. О. Соломовой<br />
+Готов к командировкам. Не готов к переезду.</p>
+<p style="color:#ff0000"><strong style="color:#ff00ff">Контактная информация:</strong><br />
+<strong style="color:#ff00ff"> Телефон: </strong> +375 (29) 525-90-81<br />
+<strong style="color:#ff00ff"> Электронная почта: </strong> egor.yakusik2021@gmail.com</p>
+<p style="text-align: left; color:#ff0000"><strong style="color:#ff00ff">Ключевые знания и навыки:</strong></p>
+<ul>
+<li>Качественный перевод с сохранением первоначального смысла.</li>
+<li>Перевод юридических, художественных и технических текстов.</li>
+<li>Опыт составления и ведения глоссариев.</li>
+<li>Работа в профессиональных программах для переводов.</li>
+</ul>
+<p style="color:#ff0000"><strong style="color:#ff00ff">Достижения: </strong></p>
+<ul>
+<li>Занял III место во всероссийском конкурсе художественного перевода (2019 год).</li>
+<li>Успешно прошел стажировку в English Learners, получив хорошие отзывы в рекомендации.</li>
+<li>Занял I место в олимпиаде по английскому языку Московского государственного университета (2018 год).</li>
+</ul>
+<p style="color:#ff0000"><strong style="color:#ff00ff">Опыт работы:</strong><br />
+<strong style="color:#ff00ff">05.2019 </strong><strong style="color:#ff00ff">– 07.2019 </strong>Учебная практика, переводчик английского<br />
+Бюро переводов Babylon<br />
+Сфера деятельности: издательское учреждение</p>
+<ul >
+<li>Перевод юридических, технических и маркетинговых текстов.</li>
+<li>Работа в программах для корректирования и перевода текстов.</li>
+<li>Составление и ведение глоссариев.</li>
+</ul>
+<p style="color:#ff0000"><strong style="color:#ff00ff">07.2019 </strong><strong style="color:#ff00ff">– 10.2019 </strong>Стажер<br />
+Центр английского языка English Learners, г. Москва<br />
+Сфера деятельности: образовательная организация</p>
+<ul>
+<li>Проведение собраний с носителями языка и участие в них.</li>
+<li>Составление буклетов и перевод необходимой документации.</li>
+<li>Продвижение и участие в развитии проекта.</li>
+</ul>
+<p style="color:#ff0000"><strong style="color:#ff00ff">Образование:</strong><br />
+<strong>2017 </strong>Центр языков Yes<br />
+Курсы английского языка, сертификат</p>
+<p style="color:#ff0000"><strong style="color:#ff00ff">н. в. – 2022 </strong>Московский государственный университет, г. Москва<br />
+Специальность: «Переводчик английского», высшее образование<br /> </p>
+<p style="color:#ff0000"><strong style="color:#ff00ff">Дополнительная информация:</strong><br />
+<strong style="color:#ff00ff">Иностранные языки:</strong> английский язык — продвинутый уровень (C1).<br />
+<strong style="color:#ff00ff">Знание ПК:</strong> уверенный пользователь (MS Office, SDL Trados Studio, Wordfast Pro, Oddjob, Translation Workspace XLIFF Editor, Memsource editor, Linguistic Toolbox, Xbench).</p>
+</body>
+</html>
+
