@@ -1,0 +1,23 @@
+// Пример 1: Использование RegExp.test()
+var pattern = /abc/;
+var text = "abcdef";
+if (pattern.test(text)) {
+    console.log("Найдено совпадение");
+} else {
+    console.log("Совпадение не найдено");
+}
+
+// Пример 2: Использование String.match()
+var text2 = "abc abc abc";
+var matches = text2.match(/abc/g);
+console.log("Совпадения:", matches);
+
+// Пример 3: Использование String.split()
+var text3 = "apple,orange,banana";
+var fruits = text3.split(",");
+console.log("Фрукты:", fruits);
+
+// Пример 4: Использование String.replace()
+var text4 = "Hello, World!";
+var modifiedText = text4.replace(/world/i, "Universe");
+console.log("Измененный текст:", modifiedText);

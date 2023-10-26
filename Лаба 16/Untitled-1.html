@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример формы</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="text">Текстовое поле:</label>
+        <input type="text" id="text"><br>
+
+        <label for="checkbox">Флажок:</label>
+        <input type="checkbox" id="checkbox"><br>
+
+        <label for="radio">Переключатель 1:</label>
+        <input type="radio" name="radio" id="radio1"><br>
+        <label for="radio">Переключатель 2:</label>
+        <input type="radio" name="radio" id="radio2"><br>
+
+        <label for="select">Список:</label>
+        <select id="select">
+            <option value="option1">Опция 1</option>
+            <option value="option2">Опция 2</option>
+            <option value="option3">Опция 3</option>
+        </select><br>
+
+        <button type="button" onclick="getData()">Получить данные</button>
+    </form>
+
+    <script>
+        function getData() {
+            var textValue = document.getElementById("text").value;
+            var checkboxValue = document.getElementById("checkbox").checked;
+            var radioValue;
+            var radioButtons = document.getElementsByName("radio");
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    radioValue = radioButtons[i].value;
+                    break;
+                }
+            }
+            var selectValue = document.getElementById("select").value;
+
+            var result = "Текстовое поле: " + textValue + "\n" +
+                         "Флажок: " + checkboxValue + "\n" +
+                         "Переключатель: " + radioValue + "\n" +
+                         "Список: " + selectValue;
+
+            alert(result);
+        }
+    </script>
+</body>
+</html>

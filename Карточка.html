@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма</title>
+</head>
+<body>
+    <form id="myForm">
+            <label for="имя">Имя:</label>
+            <input type="text" id="имя" name="имя" required pattern="[A-Za-zА-Яа-яЁё\s]+"><br>
+    
+            <label for="фамилия">Фамилия:</label>
+            <input type="text" id="фамилия" name="фамилия" required pattern="[A-Za-zА-Яа-яЁё\s]+"><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="комментарий">Комментарий:</label>
+            <textarea id="комментарий" name="комментарий" rows="4" required></textarea><br>
+
+        <input type="submit" value="Ок" onckick="Ok()">
+        <input type="button" value="Отмена" onclick="отмена()">
+    </form>
+
+    <div id="output">
+        <!-- Здесь будут отображаться значения из cookie -->
+    </div>
+
+    <script>
+        function отмена() {
+            // Отмена - очистить значения полей формы
+            document.getElementById("имя").value = "";
+            document.getElementById("фамилия").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("комментарий").value = "";
+        }
+        function Ok(){
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            var isValid = true;
+
+        // Проверка на пустые поля
+            if (document.getElementById("имя").value.trim() === "") {
+                isValid = false;
+            alert("Поле 'Имя' не может быть пустым.");
+            }
+            if (document.getElementById("фамилия").value.trim() === "") {
+                isValid = false;
+            alert("Поле 'Фамилия' не может быть пустым.");
+            }
+
+            // Проверка на соответствие формату Email
+            var email = document.getElementById("email").value;
+            if (!isValidEmail(email)) {
+                isValid = false;
+            alert("Пожалуйста, введите корректный Email.");
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+            
+            // Получение значений полей формы
+            var имя = document.getElementById("имя").value;
+            var фамилия = document.getElementById("фамилия").value;
+            var email = document.getElementById("email").value;
+            var комментарий = document.getElementById("комментарий").value;
+
+            // Запись значений в cookie
+            document.cookie = "имя=" + имя;
+            document.cookie = "фамилия=" + фамилия;
+            document.cookie = "email=" + email;
+            document.cookie = "комментарий=" + комментарий;
+
+            // Вывод значений из cookie на экран
+            var cookies = document.cookie.split(';');
+            var outputHTML = "<h2>Значения из cookie:</h2>";
+            for (var i = 0; i < cookies.length; i++) {
+                outputHTML += cookies[i] + "<br>";
+            }
+            
+
+            var formData = {
+                    имя: имя,
+                    фамилия: фамилия,
+                    email: email,
+                    комментарий: комментарий
+                };
+
+                // Convert the JSON object to a JSON string
+                var jsonData = JSON.stringify(formData);
+
+                // Display or use the JSON data as needed
+                console.log(jsonData);
+                
+            document.getElementById("output").innerHTML = outputHTML;
+        });
+    }
+
+        // Очистка cookie
+        function clearCookie() {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
+        }
+    </script>
+</body>
+</html>

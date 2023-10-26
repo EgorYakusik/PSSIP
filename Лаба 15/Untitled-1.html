@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Интерфейсные события</title>
+</head>
+<body>
+    <div id="mouseEventDiv">
+        <p id="mouseEvent">События мыши</p>
+        <button id="mouseButton">Наведи курсор</button>
+    </div>
+
+    <div id="keyboardEventDiv">
+        <p id="keyboardEvent">События клавиатуры</p>
+        <input type="text" id="keyboardInput">
+    </div>
+
+    <div id="dragDropEventDiv">
+        <p id="dragDropEvent">Drag & Drop события</p>
+        <div id="dragTarget" draggable="true">Перетащи меня</div>
+    </div>
+
+    <div id="pointerEventDiv">
+        <p id="pointerEvent">События указателя</p>
+        <div id="pointerTarget">Наведи указатель мыши на элемент.</div>
+    </div>
+
+    <div id="scrollEventDiv">
+        <p id="scrollEvent">События полосы прокрутки</p>
+        <div style="height: 2000px;"></div>
+    </div>
+
+    <div id="touchEventDiv">
+        <p id="touchEvent">События сенсорных экранов</p>
+    </div>
+
+    <script>
+        // События мыши
+        document.getElementById("mouseButton").addEventListener("mouseover", function() {
+            document.getElementById("mouseEvent").textContent = "Мышь наведена на кнопку.";
+        });
+        document.getElementById("mouseButton").addEventListener("mouseout", function() {
+            document.getElementById("mouseEvent").textContent = "Мышь убрана с кнопки.";
+        });
+
+        // События клавиатуры
+        document.getElementById("keyboardInput").addEventListener("keyup", function(event) {
+            document.getElementById("keyboardEvent").textContent = "Нажата клавиша: " + event.key;
+        });
+
+        // Drag & Drop события
+        document.getElementById("dragTarget").addEventListener("dragstart", function(event) {
+            event.dataTransfer.setData("text/plain", event.target.id);
+        });
+
+        // События указателя
+        document.getElementById("pointerTarget").addEventListener("pointerenter", function() {
+            document.getElementById("pointerEvent").textContent = "Указатель мыши вошел в элемент.";
+        });
+        document.getElementById("pointerTarget").addEventListener("pointerleave", function() {
+            document.getElementById("pointerEvent").textContent = "Указатель мыши покинул элемент.";
+        });
+
+        // События полосы прокрутки
+        window.addEventListener("scroll", function() {
+            document.getElementById("scrollEvent").textContent = "Прокрутка страницы: " + window.scrollY + "px";
+        });
+
+        // События сенсорных экранов (потребуется более сложная настройка для обработки жестов на устройствах с сенсорными экранами)
+        document.getElementById("touchEventDiv").addEventListener("touchstart", function(event) {
+            document.getElementById("touchEvent").textContent = "Сенсорное касание обнаружено.";
+        });
+    </script>
+</body>
+</html>
